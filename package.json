@@ -1,0 +1,32 @@
+{
+  "name": "countingsquirrels",
+  "version": "1.0.0",
+  "description": "A Squirrel Counting Service hosted on Azure App Service!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/CountingSquirrels.git"
+  },
+  "keywords": [
+    "Count",
+    "Squirrel",
+    "Instafluff",
+    "So",
+    "Many",
+    "Squirrels"
+  ],
+  "author": "Instafluff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/CountingSquirrels/issues"
+  },
+  "homepage": "https://github.com/instafluff/CountingSquirrels#readme",
+  "dependencies": {
+    "comfy.js": "^1.1.6",
+    "dotenv": "^8.2.0",
+    "webwebweb": "^1.4.3"
+  }
+}

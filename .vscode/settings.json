@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/bbdc12dd-b345-47af-acff-3200cc55d2cd/resourceGroups/countingsquirrels/providers/Microsoft.Web/sites/countingsquirrels",
+    "appService.deploySubpath": "."
+}
