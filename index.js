@@ -13,6 +13,14 @@ ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
     if( command === "savethesquirrels" ) {
         fs.writeFileSync( "counts.json", JSON.stringify( counts ) );
     }
+    if( command === "azureiscool" ) {
+        giveawayEntrants[ user ] = true;
+    }
+    counts[ "command" ] = ( counts[ "command" ] || 0 ) + 1;
+    if( !counts[ "commands" ] ) {
+        counts[ "commands" ] = {};
+    }
+    counts[ "commands" ][ command ] = ( counts[ "commands" ][ command ] || 0 ) + 1;
 };
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
     counts[ "chat" ] = ( counts[ "chat" ] || 0 ) + 1;
@@ -27,4 +35,11 @@ Web.APIs[ "/chat" ] = ( qs, body, opts ) => {
 Web.APIs[ "/squirrels" ] = ( qs, body, opts ) => {
     return counts[ "squirrel" ].toString();
 };
+let giveawayEntrants = {};
+Web.APIs[ "/winner" ] = ( qs, body, opts ) => {
+    let entrants = Object.keys( giveawayEntrants );
+    let winner = Math.floor( entrants.length * Math.random() );
+    return entrants[ winner ];
+};
+
 Web.Run( process.env.PORT || 9000 );
